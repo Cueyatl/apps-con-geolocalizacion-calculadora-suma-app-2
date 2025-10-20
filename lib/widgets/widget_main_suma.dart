@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:calculadora/widgets/widget_calculadora_suma.dart';
 
 
-final colorScheme = ColorScheme.fromSeed(seedColor: Colors.deepOrange); 
+final colorScheme = ColorScheme.fromSeed(seedColor: Colors.amber); 
 
 class WidgetMainSuma extends StatelessWidget {
   const WidgetMainSuma({super.key});
@@ -53,14 +53,9 @@ class WidgetMainSuma extends StatelessWidget {
             ), 
 
         ), 
-
-      
       ),
       home:
         WidgetCalculadoraSuma(),
-      
-       
     );
-
   }
 }
