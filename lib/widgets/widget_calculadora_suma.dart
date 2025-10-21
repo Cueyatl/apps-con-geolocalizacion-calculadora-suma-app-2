@@ -23,11 +23,10 @@ class _WidgetCalculadoraSumaState extends State<WidgetCalculadoraSuma> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
         /*  title: const Text('Calculadora App'),
         centerTitle: true, */
-        backgroundColor: Colors.transparent,
+        backgroundColor: Theme.of(context).colorScheme.surface,
       ),
       body: SingleChildScrollView(
         // 👈 prevents overflow
@@ -37,7 +36,7 @@ class _WidgetCalculadoraSumaState extends State<WidgetCalculadoraSuma> {
           children: [
             Text(
               'Calculadora Básica',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             SizedBox(height: 20),
             //Layout secundario, organiza horizontalmente los textfields
@@ -68,16 +67,34 @@ class _WidgetCalculadoraSumaState extends State<WidgetCalculadoraSuma> {
               ],
             ),
             SizedBox(height: 20),
+
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextButton(
+                onPressed: sumar,
+                style: TextButton.styleFrom(
+                  fixedSize: const Size(120, 50),
+                  backgroundColor: Theme.of(
+                    context,
+                  ).colorScheme.surfaceContainer,
+                  foregroundColor: Theme.of(
+                    context,
+                  ).colorScheme.onSurfaceVariant,
+                ),
+                child: Text('Sumar', style: Theme.of(context).textTheme.titleMedium,),
+              ),
+            ),
+
             Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.surfaceContainerLow,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
                 'Resultado: $resultado',
-                style: TextStyle(fontSize: 20),
-              ),
+                style: Theme.of(context).textTheme.titleMedium,
+                ),
               
             ),
           ],
