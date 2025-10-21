@@ -66,7 +66,9 @@ class _WidgetCalculadoraSumaState extends State<WidgetCalculadoraSuma> {
                 ),
               ],
             ),
+            
             SizedBox(height: 20),
+            Icon(Icons.favorite, color: Colors.green, size: 30),
 
             Padding(
               padding: const EdgeInsets.all(20.0),
